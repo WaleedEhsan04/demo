@@ -1,10 +1,12 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'maven_3.9.4'
+    }
     stages {
-        stage ('Print') {
+        stage ('Build Maven') {
             steps {
-                echo "Hello  World!"
+                sh 'mvn clean install'
             }
         }
     }
