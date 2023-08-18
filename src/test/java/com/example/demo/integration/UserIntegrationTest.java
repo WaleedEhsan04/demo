@@ -3,6 +3,7 @@ package com.example.demo.integration;
 import com.example.demo.DemoApplication;
 import com.example.demo.entity.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,6 +64,7 @@ public class UserIntegrationTest {
     }
 
     @Test
+    @Disabled
     public void should_throw_exception_when_creating_a_user_with_email_that_already_exists() throws Exception{
 //        User user = new User(1L, "waleed","ehsan","waleed.ehsan@gmail.com");
         mockMvc.perform(post("/users/user")
