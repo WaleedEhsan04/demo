@@ -16,5 +16,15 @@ pipeline {
                 }
             }
         }
+        stage ('Push Image to Hub') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'DockerPwd', variable: 'DOCKER_PASSWORD')]){
+                    sh 'docker login -u waleedehsan04 -p ${DOCKER_PASSWORD}'
+                    }
+                    sh 'docker push demo'
+                }
+            }
+        }
     }
 }
