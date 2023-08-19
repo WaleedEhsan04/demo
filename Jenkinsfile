@@ -22,7 +22,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'DockerPwd', variable: 'DOCKER_PASSWORD')]){
                     sh 'docker login -u waleedehsan04 -p ${DOCKER_PASSWORD}'
                     }
-                    sh 'docker push demo'
+                    sh 'docker push waleedehsan04/demo'
                 }
             }
         }
