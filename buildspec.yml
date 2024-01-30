@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - echo Do nothing in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
